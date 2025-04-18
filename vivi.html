@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivi Huang - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 1s ease;
+        }
+
+        /* Background Layers */
+        :root {
+            --space-gradient-1: linear-gradient(45deg, #0f0f1a 0%, #1a1a2f 100%);
+            --space-gradient-2: linear-gradient(45deg, #0f1a1f 0%, #1a2f2a 100%);
+            --space-gradient-3: linear-gradient(45deg, #1f0f1a 0%, #2a1a2f 100%);
+            --space-gradient-4: linear-gradient(45deg, #0f1f1a 0%, #1a2f2f 100%);
+            --accent: #ff0076;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--space-gradient-1);
+            z-index: -2;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header Section */
+        .parallax-bg {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .header-content {
+            text-align: center;
+            z-index: 10;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .dynamic-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #009ffd, #ff0076);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: titleFloat 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 1; }
+        }
+
+        /* Astronaut styling */
+        .astronaut {
+            position: absolute;
+            right: 5%;
+            top: 20%;
+            width: 25vw;
+            max-width: 400px;
+            min-width: 200px;
+            z-index: 5;
+            animation: float 10s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* Content Sections */
+        .neon-card {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            max-width: 1200px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Section-specific gradients */
+        [data-section="about"] .section-header {
+            background: linear-gradient(45deg, #00c3ff, #ff00a2);
+        }
+        [data-section="experience"] .section-header {
+            background: linear-gradient(45deg, #00ff88, #ff006e);
+        }
+        [data-section="projects"] .section-header {
+            background: linear-gradient(45deg, #7d00ff, #ff9100);
+        }
+        [data-section="awards"] .section-header {
+            background: linear-gradient(45deg, #ff0080, #00ffd5);
+        }
+
+        /* Navigation */
+        .sidebar {
+            position: fixed;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            color: white;
+        }
+
+        .nav-btn:hover {
+            transform: translateX(-8px);
+            background: var(--accent);
+        }
+
+        /* Social Buttons */
+        .social-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .linkedin { background: #0077b5; }
+        .github { background: #333; }
+
+        .social-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        /* Stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            border-radius: 50%;
+            position: absolute;
+            will-change: transform;
+            background-color: white;
+        }
+
+        /* Content Components */
+        .info-box {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project-card {
+            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            border-left: 2px solid var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .dynamic-title {
+                font-size: 2.5rem;
+            }
+            
+            .astronaut {
+                width: 40vw;
+                right: 2%;
+                top: 15%;
+            }
+            
+            .sidebar {
+                left: 0.5rem;
+            }
+            
+            .neon-card {
+                padding: 2rem 1rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <nav class="sidebar">
+        <button class="nav-btn" data-section="about"><i class="fas fa-user"></i></button>
+        <button class="nav-btn" data-section="experience"><i class="fas fa-briefcase"></i></button>
+        <button class="nav-btn" data-section="projects"><i class="fas fa-code"></i></button>
+        <button class="nav-btn" data-section="awards"><i class="fas fa-trophy"></i></button>
+    </nav>
+
+    <section class="parallax-bg">
+        <div class="header-content">
+            <h1 class="dynamic-title">Vivi Huang</h1>
+            <p class="tagline">Computer Engineering @ University of Waterloo</p>
+            <div class="social-container">
+                <a href="https://www.linkedin.com/in/vivi-huang-45254223b/" class="social-btn linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ctr-cv" class="social-btn github" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <img src="astronaut2.png" 
+            alt="Astronaut" 
+            class="astronaut">
+    </section>
+
+    <!-- Content Sections -->
+    <section id="about" class="neon-card" data-section="about">
+        <h2 class="section-header">About Me</h2>
+        <p>Hello and welcome to my space! I'm a passionate Computer Engineering student exploring the frontiers of technology. Here you'll find:</p>
+        <ul>
+            <li>My technical journey and achievements</li>
+            <li>Innovative projects pushing boundaries</li>
+            <li>Unique experiences in tech development</li>
+        </ul>
+        
+        <div class="info-box">
+            <h3>Current Focus</h3>
+            <p>Researching quantum computing applications in space navigation systems</p>
+        </div>
+    </section>
+
+    <section id="experience" class="neon-card" data-section="experience">
+        <h2 class="section-header">Experiences</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Tech Innovator @ UW Labs</h3>
+                <p>2023-Present</p>
+                <ul>
+                    <li>Developed AI-powered campus navigation system</li>
+                    <li>Implemented quantum computing simulations</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Research Assistant</h3>
+                <p>2022-2023</p>
+                <ul>
+                    <li>Machine learning algorithms for space imagery</li>
+                    <li>Data visualization techniques</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="neon-card" data-section="projects">
+        <h2 class="section-header">Projects</h2>
+        <div class="project-card">
+            <h3>Neural Network Visualizer</h3>
+            <p>Interactive ML model demonstration tool using TensorFlow.js and Three.js</p>
+            <div class="tech-stack">
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">TensorFlow</span>
+                <span class="tech-item">Three.js</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Quantum Encryption Protocol</h3>
+            <p>Secure communication system using quantum key distribution</p>
+            <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Qiskit</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="neon-card" data-section="awards">
+        <h2 class="section-header">Awards</h2>
+        <div class="project-card">
+            <h3>🏆 Quantum Computing Challenge Winner</h3>
+            <p>Developed novel qubit optimization algorithm recognized by IEEE Quantum Initiative</p>
+        </div>
+        <div class="project-card">
+            <h3>🥇 SpaceTech Young Innovator Award</h3>
+            <p>For contributions to space navigation algorithms</p>
+        </div>
+    </section>
+    
+    <script>
+        // Star Generation
+        function createStars() {
+            const container = document.querySelector('.stars');
+            container.innerHTML = '';
+            
+            for(let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.animation = `twinkle ${Math.random() * 2 + 1}s infinite`;
+                star.style.opacity = Math.random() * 0.5 + 0.5;
+                container.appendChild(star);
+            }
+        }
+        createStars();
+        window.addEventListener('resize', createStars);
+
+        // Smooth Scroll Navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.getElementById(this.dataset.section);
+                const yOffset = -80;
+                const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Gradient Transition
+        let currentActive = 0;
+        const gradients = [
+            'var(--space-gradient-1)',
+            'var(--space-gradient-2)',
+            'var(--space-gradient-3)',
+            'var(--space-gradient-4)'
+        ];
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.neon-card');
+            const scrollPosition = window.scrollY + window.innerHeight/2;
+            
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if(scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                    if(currentActive !== index) {
+                        currentActive = index;
+                        document.body.style.background = gradients[index];
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
