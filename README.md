@@ -7,5 +7,5 @@
 
 For maximum readability and efficiency, this simple page is coded in one .html file with built-in CSS and JS. And since we're aiming for maximum efficiency, 90% of code is written by Deepseek-V3-0324. Huge credits to them as it would've taken me ages to remember how to write front-end.
 
-
+Use `git clone` and open in browser to see it in action.
 
