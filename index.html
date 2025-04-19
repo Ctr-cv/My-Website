@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivi Huang - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <nav class="sidebar">
+        <button class="nav-btn" data-section="about"><i class="fas fa-user"></i></button>
+        <button class="nav-btn" data-section="experience"><i class="fas fa-briefcase"></i></button>
+        <button class="nav-btn" data-section="projects"><i class="fas fa-code"></i></button>
+        <button class="nav-btn" data-section="awards"><i class="fas fa-trophy"></i></button>
+    </nav>
+
+    <section class="parallax-bg">
+        <div class="header-content">
+            <h1 class="dynamic-title">Vivi Huang</h1>
+            <p class="tagline">Computer Engineering @ University of Waterloo</p>
+            <div class="social-container">
+                <a href="https://www.linkedin.com/in/vivi-huang-45254223b/" class="social-btn linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ctr-cv" class="social-btn github" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <img src="resume-photo.png" 
+            alt="Download Resume" 
+            class="resume-float"
+            id="resume-download">
+        <img src="astronaut2.png" 
+            alt="Astronaut" 
+            class="astronaut">
+    </section>
+
+    <!-- Content Sections -->
+    <section id="about" class="neon-card" data-section="about">
+        <h2 class="section-header" data-text="About Me"></h2>
+        <div class="info-box">
+            <h3>Hello and Welcome!</h3>
+            <p>Whether you're a curious employer, my fellow friend or potentially one of my professor,
+                chances are, you're here to <u>learn a little about me.</u> Here, I'll present all the interesting facts, 
+                previous experiences, projects and awards, and how they come together to form who I am today.
+                Hope you enjoy your stay here!
+            </p>
+        </div>
+        
+        <div class="about-container">
+            <!-- Left Column - Interactive Sections -->
+            <div class="about-content">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-icon">👩‍🚀</span>
+                        <p>Who am I?</p>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Engineer, scientist, and developer in training at <b>UWaterloo Computer Engineering</b></li>
+                            <li>Current SDE intern at JD.com marketing backend team/li>
+                            <li>Avid problem-solver with diverse interests and an insatiable curiosity</li>
+                            <li>Former competitive math enjoyer and now back-end developer</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-icon">💻</span>
+                        My Expertise
+                    </button>
+                    <div class="accordion-content">
+                        <div class="tech-stack">
+                            <span class="tech-item">C++</span>
+                            <span class="tech-item">Python + Django</span>
+                            <span class="tech-item">Java + SSM</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">Git</span>
+                        </div>
+                        <ul>
+                            <li>Worked on 2 co-op/internships in web-development</li>
+                            <li>Currently specializing in SpringBoot microservices</li>
+                            <li>Experience with AI web modules and LLM deployments using Langchain</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-icon">✨</span>
+                        Things to Know
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Studies digital circuits and micro-architectures at school</li>
+                            <li>Designed Smart Light, a STM32-based product that provides bright outdoors lighting with minimal power consumption</li>
+                            <li>Reached top 60 in AIME I 2021 and app. top 200 in COMC 2022, in Canada</li>
+                            <li>I enjoy playing piano and oboe in my recreational time. Received
+                                level 6 national gold medal in oboe back in 2021.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Photo -->
+            <div class="about-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-user-astronaut"></i>
+                        <p>Pretend there's a photo here...</p>
+                    </div>
+                    <div class="photo-caption">
+                        <p>"Exploring cutting-edge technologies and researches"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------- Experience Section ------------------------------->
+    <section id="experience" class="neon-card" data-section="experience">
+        <h2 class="section-header" data-text="Experiences"></h2>
+        
+        <div class="experience-container">
+            <!-- Left Column - Timeline -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>SDE Intern @ JD.com</h3>
+                    <p class="timeline-date">2023-Present</p>
+                    <ul>
+                        <li>Developed AI-powered campus navigation system</li>
+                        <li>Implemented quantum computing simulations</li>
+                        <li>Led team of 5 researchers in ML applications</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Research Assistant</h3>
+                    <p class="timeline-date">2022-2023</p>
+                    <ul>
+                        <li>Machine learning algorithms for space imagery</li>
+                        <li>Data visualization techniques</li>
+                        <li>Published 2 papers in IEEE conferences</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Engineering Intern</h3>
+                    <p class="timeline-date">Summer 2022</p>
+                    <ul>
+                        <li>Developed testing protocols for quantum circuits</li>
+                        <li>Optimized data processing pipelines</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Right Column - Photos -->
+            <div class="experience-gallery">
+                <div class="photo-stack">
+                    <div class="photo-item photo-1 active-photo" data-index="0">
+                        <div class="photo-caption">Lab Team 2023</div>
+                    </div>
+                    <div class="photo-item photo-2" data-index="1">
+                        <div class="photo-caption">Research Presentation</div>
+                    </div>
+                    <div class="photo-item photo-3" data-index="2">
+                        <div class="photo-caption">Hackathon Win</div>
+                    </div>
+                </div>
+                <div class="photo-nav-dots">
+                    <span class="dot active" data-target="0"></span>
+                    <span class="dot" data-target="1"></span>
+                    <span class="dot" data-target="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------- Project Section------------------------>
+    <section id="projects" class="neon-card" data-section="projects">
+        <h2 class="section-header" data-text="Projects"></h2>
+        <div class = "info-box">
+            <p>Here are some of my most recent projects that I have worked on. 
+                Each project showcases my skills in various fields, including quantum computing, machine learning, and web development.
+                Feel free to check them out!</p>
+        </div>
+        <div class="project-card">
+            <a href="https://github.com/yourusername/neural-network-visualizer" class="project-title" target="_blank">
+                <h3>Neural Network Visualizer</h3>
+            </a>
+            <p>Interactive ML model demonstration tool using TensorFlow.js and Three.js</p>
+            <div class="tech-stack">
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">TensorFlow</span>
+                <span class="tech-item">Three.js</span>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <a href="https://github.com/yourusername/quantum-encryption" class="project-title" target="_blank">
+                <h3>Quantum Encryption Protocol</h3>
+            </a>
+            <p>Secure communication system using quantum key distribution</p>
+            <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Qiskit</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="neon-card" data-section="awards">
+        <h2 class="section-header" data-text="Awards"></h2>
+        <div class="project-card">
+            <h3>🏆 Quantum Computing Challenge Winner</h3>
+            <p>Developed novel qubit optimization algorithm recognized by IEEE Quantum Initiative</p>
+        </div>
+        <div class="project-card">
+            <h3>🥇 SpaceTech Young Innovator Award</h3>
+            <p>For contributions to space navigation algorithms</p>
+        </div>
+    </section>
+    <section class="cosmic-footer">
+        <div class="footer-content">
+            <p>Designed with <span class="pulse-heart">❤️</span> by Vivi Huang</p>
+            <p>© 2023 Cosmic Explorer | University of Waterloo</p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
