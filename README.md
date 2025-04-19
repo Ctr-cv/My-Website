@@ -1,7 +1,7 @@
 # My-Website
 
 > [!NOTE]
-> This repo is still under construction, and haven't gone online yet. The master branch showcases the most recent updates, stay tuned for updates!
+> This repo is still under construction, and haven't gone online yet. The master branch showcases the most recent versions, so stay tuned for updates!
 
 > This repo is also an extension to my previous portfolio, [Personal-Portfolio-1](https://github.com/Ctr-cv/Web-Portfolio-1), back in 2023. Check that one out as well!
 
