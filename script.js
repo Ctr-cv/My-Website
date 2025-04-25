@@ -3,7 +3,7 @@ function createStars() {
     const container = document.querySelector('.stars');
     container.innerHTML = '';
     
-    for(let i = 0; i < 200; i++) {
+    for(let i = 0; i < 150; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}%`;

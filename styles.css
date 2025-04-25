@@ -469,9 +469,9 @@ body::before {
     font-size: 0.9rem;
 }
 
-.photo-1 { background-image: url('https://picsum.photos/200/300'); }
-.photo-2 { background-image: url('https://picsum.photos/210/300'); }
-.photo-3 { background-image: url('https://picsum.photos/220/300'); }
+.photo-1 { background-image: url('photos/jd.jpg')}
+.photo-2 { background-image: url('photos/adaptive_pulse.png')}
+.photo-3 { background-image: url('photos/ICCAS.png') }
 
 .timeline {
     position: relative;
