@@ -28,14 +28,6 @@ body::before {
     z-index: -2;
 }
 
-.stars {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: -1;
-}
-
 /* Header Section */
 .parallax-bg {
     height: 100vh;
@@ -128,13 +120,16 @@ body::before {
     min-height: 85vh;
     padding: 3rem 2rem;
     margin: 1rem auto;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
     border-radius: 15px;
     max-width: 1200px;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 
+        0 0 15px rgba(0, 100, 255, 0.2),
+        inset 0 0 20px rgba(0, 200, 255, 0.1) !important;
 }
 
 .section-header {
@@ -257,7 +252,7 @@ body::before {
     height: 100%;
     overflow: hidden;
     pointer-events: none;
-    z-index: -1;
+    z-index: 2;
 }
 
 .star {
@@ -381,12 +376,14 @@ body::before {
     top: 2rem;
     height: 100vh;
     perspective: 1000px;
+    z-index: 3;
 }
 
 .photo-stack {
     position: relative;
     height: 80vh;
     margin-top: 2rem;
+    z-index: 3;
 }
 
 .photo-item {
@@ -403,6 +400,7 @@ body::before {
     transform-style: preserve-3d;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 3;
 }
 
 .active-photo {
@@ -437,7 +435,7 @@ body::before {
 .photo-1 {
     top: 0;
     right: 0;
-    z-index: 3;
+    z-index: 5;
     background: linear-gradient(45deg, #0f0f1a, #1a1a2f);
     transform: rotateZ(-2deg);
 }
@@ -445,7 +443,7 @@ body::before {
 .photo-2 {
     top: 10%;
     right: -10%;
-    z-index: 2;
+    z-index: 4;
     background: linear-gradient(45deg, #0f1a1f, #1a2f2a);
     transform: rotateZ(3deg);
 }
@@ -453,7 +451,7 @@ body::before {
 .photo-3 {
     top: 20%;
     right: -5%;
-    z-index: 1;
+    z-index: 3;
     background: linear-gradient(45deg, #1f0f1a, #2a1a2f);
     transform: rotateZ(-5deg);
 }
