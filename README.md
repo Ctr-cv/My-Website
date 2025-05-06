@@ -6,7 +6,7 @@
 
 > This repo is also an extension to my previous portfolio, [Personal-Portfolio-1](https://github.com/Ctr-cv/Web-Portfolio-1), back in 2023. Check that one out as well!
 
-For maximum readability and efficiency, this simple page is coded in one .html file with built-in CSS and JS. And since we're aiming for maximum efficiency, 90% of code is written by Deepseek-V3-0324. Huge credits to them as it would've taken me ages to remember how to write front-end.
+For maximum readability and efficiency, this simple page is coded in one .html file with built-in CSS and JS. And since we're aiming for maximum efficiency, 90% of code is written by Deepseek-V3-0324. Huge credits to Deepseek as it would've taken me ages to write all of this.
 
-Use `git clone` and open in browser to see it in action.
+Visit the site at https://ctr-cv.github.io/, or use `git clone` to clone it for your use.
 
